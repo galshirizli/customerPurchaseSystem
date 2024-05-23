@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: galshirizli/frontend
+        image: galshirizli/frontend:0.1
         ports:
         - containerPort: 80
 ---

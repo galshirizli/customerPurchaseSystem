@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: galshirizli/backend
+        image: galshirizli/backend:0.1
         ports:
         - containerPort: 3000
 ---
