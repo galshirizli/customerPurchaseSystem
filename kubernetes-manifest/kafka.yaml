@@ -29,10 +29,9 @@ spec:
       labels:
         app: kafka
     spec:
-      enableServiceLinks: false
       containers:
         - name: kafka
-          image: confluentinc/cp-kafka:latest
+          image: wurstmeister/kafka:latest
           ports:
             - containerPort: 9092
           resources:
