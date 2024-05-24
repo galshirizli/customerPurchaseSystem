@@ -11,14 +11,15 @@ kubectl apply -f ./kubernetes-manifest/zookeeper.yaml
 kubectl apply -f ./kubernetes-manifest/mongo.yaml
 echo " ------ Zookeeper and MongoDB applied. Waiting for them to be available... ------"
 kubectl wait --for=condition=available --timeout=300s deployment/zookeeper -n $NAMESPACE &
-kubectl wait --for=condition=ready --timeout=300s statefulset/mongo -n $NAMESPACE &
+kubectl wait --for=condition=ready --timeout=300s pod/mongo-0 -n $NAMESPACE &
 wait
 echo "------ Zookeeper and MongoDB are available. ------"
 
 echo "------ Applying Kafka... ------"
 kubectl apply -f ./kubernetes-manifest/kafka.yaml
 echo "------ Kafka applied. Waiting for Kafka to be available... ------"
-kubectl wait --for=condition=ready --timeout=300s statefulset/kafka -n $NAMESPACE
+kubectl wait --for=condition=ready --timeout=300s pod/kafka-0 -n $NAMESPACE
+sleep 30
 echo "------ Kafka is available. ------"
 
 echo "------ Applying Backend and Frontend... ------"
