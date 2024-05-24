@@ -19,7 +19,7 @@ echo "------ Applying Kafka... ------"
 kubectl apply -f ./kubernetes-manifest/kafka.yaml
 echo "------ Kafka applied. Waiting for Kafka to be available... ------"
 kubectl wait --for=condition=ready --timeout=300s pod/kafka-0 -n $NAMESPACE
-sleep 30
+sleep 300
 echo "------ Kafka is available. ------"
 
 echo "------ Applying Backend and Frontend... ------"
