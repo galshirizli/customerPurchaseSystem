@@ -1,28 +1,54 @@
 <!doctype html>
 <html lang="en">
-  <head></head>
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+	  input[type="text"], input[type="number"] {
+        text-align: center;
+      }
+    </style>
+  </head>
   <body>
-    <!-- Buy Item -->
-    <form>
-      <label for="username">Username:</label><br>
-      <input type="text" id="username" value="try"><br>
-      <label for="userid">User ID:</label><br>
-      <input type="text" id="userid" value="123"><br>
-      <label for="price">Price:</label><br>
-      <input type="number" id="price" value="200"><br><br>
-      <button type="button" id="buyButton">Buy Item</button>
-  </form><br><br>
-  <!-- Get All User Buys -->
-    <form>
-      <label for="useridBuys">User ID:</label>
-      <br>
-      <input type="text" id="useridBuys">
-      <br><br>
-      <button type="button" id="getAllUserBuys">Get All User Buys</button>
-  </form><br><br>
-  <!-- Get All Users Buys -->
-  <button type="button" id="getAllUsersBuys">Get All Users Buys</button>
+    <div class="container">
+      <h1>Customer Purchase System</h1>
+      <!-- Buy Item -->
+	  <h3>Add New Item</h3>
+      <form>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" value="Username"><br>
+        <label for="userid">User ID:</label><br>
+        <input type="text" id="userid" value="123"><br>
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" value="200"><br><br>
+        <button type="button" id="buyButton">Buy Item</button>
+      </form>
+      <!-- Get All User Buys -->
+	  <h3>Display all purchase requests for the user:</h3>
+      <form>
+        <label for="useridBuys">User ID:</label><br>
+        <input type="text" id="useridBuys"><br><br>
+        <button type="button" id="getAllUserBuys">Get All User Buys</button>
+      </form>
+      <!-- Get All Users Buys -->
+	  <h3>Display all purchase requests for all users:</h3>
+      <button type="button" id="getAllUsersBuys">Get All Users' Buys</button>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/webServer.js"></script>
   </body>
 </html>
+
