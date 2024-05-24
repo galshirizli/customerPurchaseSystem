@@ -4,7 +4,7 @@ metadata:
   name: kafka-service
   namespace: customer-purchase-system
 spec:
-  clusterIP: None
+  type: ClusterIP
   selector:
     app: kafka
   ports:
@@ -15,12 +15,11 @@ spec:
 
 ---
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: kafka
   namespace: customer-purchase-system
 spec:
-  serviceName: "kafka-service"
   replicas: 1
   selector:
     matchLabels:
@@ -57,11 +56,3 @@ spec:
               value: "PLAINTEXT"
             - name: KAFKA_CREATE_TOPICS
               value: "my-topic:1:1"
-  volumeClaimTemplates:
-    - metadata:
-        name: kafka-storage
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        resources:
-          requests:
-            storage: 1Gi
