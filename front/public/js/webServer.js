@@ -33,6 +33,7 @@ document.getElementById('getAllUsersBuys').addEventListener('click', async () =>
     const purchasesContainer = document.createElement('div');
     response.data.forEach(purchase => {
       const purchaseElement = document.createElement('div');
+      purchaseElement.classList.add('purchase');
       purchaseElement.innerHTML = `
         <h3 class="username">${purchase.username}</h3>
         <p class="userid">${purchase.userid}</p>
@@ -46,7 +47,6 @@ document.getElementById('getAllUsersBuys').addEventListener('click', async () =>
     console.error('Error fetching data:', error);
   }
 });
-
 
 
 // Adds an event listener to the 'getAllUserBuys' button to fetch purchases for a specific user
@@ -64,6 +64,7 @@ document.getElementById('getAllUserBuys').addEventListener('click', async () => 
     const purchasesContainer = document.createElement('div');
     response.data.forEach(purchase => {
       const purchaseElement = document.createElement('div');
+      purchaseElement.classList.add('purchase');
       purchaseElement.innerHTML = `
         <h3 class="username">${purchase.username}</h3>
         <p class="userid">${purchase.userid}</p>

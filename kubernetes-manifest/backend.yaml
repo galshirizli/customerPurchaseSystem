@@ -18,6 +18,13 @@ spec:
         image: galshirizli/backend:0.1
         ports:
         - containerPort: 3000
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "50m"
+          limits:
+            memory: "64Mi"
+            cpu: "100m"
 ---
 apiVersion: v1
 kind: Service
